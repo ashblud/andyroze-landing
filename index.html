@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Andy Roze</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ИКОНКИ Font Awesome (для соцсетей) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #000;
+      overflow: hidden;
+    }
+
+    /* ФОН-ВИДЕО */
+    .video-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .video-bg video,
+    .video-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Мягкое затемнение */
+    .overlay-dark {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.12), rgba(0,0,0,0.55));
+    }
+
+    /* СОЦСЕТИ */
+    .socials {
+      position: fixed;
+      top: 60px;
+      left: 90px;
+      display: flex;
+      gap: 25px;
+      z-index: 10;
+      color: #fff;
+    }
+
+    .socials a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      opacity: 0.9;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    .socials a:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    /* ЛОГО В ЦЕНТРЕ */
+    .logo-wrapper {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      text-align: center;
+    }
+
+    .logo-text {
+      display: none;
+    }
+
+    /* ЛОГО-КАРТИНКА, тут играемся с режимами */
+    .logo-image {
+      display: block;
+      max-width: 60vw;
+      opacity: 0.8;
+      mix-blend-mode: overlay;
+      filter: drop-shadow(0 0 18px rgba(0,0,0,0.9));
+      pointer-events: none;
+    }
+
+    /* Для теста можешь менять только эту строку:
+       mix-blend-mode: overlay;
+       на: screen / soft-light / difference / lighten и т.п.
+    */
+  </style>
+</head>
+
+<body>
+
+  <!-- фон: видео -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="bg-video.mp4" type="video/mp4" />
+      <img src="bg-image.jpg" alt="" />
+    </video>
+  </div>
+
+  <div class="overlay-dark"></div>
+
+  <!-- СОЦСЕТИ -->
+  <div class="socials">
+    <a href="https://open.spotify.com/artist/0I22ZgD2w7WwWUmAvrTj4Y?si=evLbhPniRqua8re-rOvzOQ" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+    <a href="https://www.instagram.com/_andyroze_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@andy.roze" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://www.youtube.com/@andyroze" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+  </div>
+
+  <!-- ЛОГО -->
+  <div class="logo-wrapper">
+    <div class="logo-text">ANDY ROZE</div>
+    <img class="logo-image" src="logo.png" alt="Andy Roze" />
+  </div>
+
+</body>
+</html>

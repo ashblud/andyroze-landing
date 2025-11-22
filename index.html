@@ -5,7 +5,7 @@
   <title>Andy Roze</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ИКОНКИ Font Awesome (для соцсетей) -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -47,7 +47,7 @@
       object-position: center;
     }
 
-    /* Мягкое затемнение */
+    /* Затемнение */
     .overlay-dark {
       position: fixed;
       inset: 0;
@@ -55,11 +55,11 @@
       background: radial-gradient(circle at center, rgba(0,0,0,0.12), rgba(0,0,0,0.55));
     }
 
-    /* СОЦСЕТИ */
+    /* СОЦСЕТИ (десктоп) */
     .socials {
       position: fixed;
-      top: 60px;
-      left: 90px;
+      top: 60px;   /* увеличенный отступ */
+      left: 90px;  /* увеличенный отступ */
       display: flex;
       gap: 25px;
       z-index: 10;
@@ -79,7 +79,7 @@
       transform: translateY(-2px);
     }
 
-    /* ЛОГО В ЦЕНТРЕ */
+    /* ЛОГО */
     .logo-wrapper {
       position: fixed;
       top: 50%;
@@ -89,30 +89,35 @@
       text-align: center;
     }
 
+    /* текстовое лого выключено */
     .logo-text {
       display: none;
     }
 
-    /* ЛОГО-КАРТИНКА, тут играемся с режимами */
+    /* PNG-лого */
     .logo-image {
       display: block;
       max-width: 60vw;
       opacity: 0.8;
-      mix-blend-mode: overlay;
       filter: drop-shadow(0 0 18px rgba(0,0,0,0.9));
       pointer-events: none;
     }
 
-    /* Для теста можешь менять только эту строку:
-       mix-blend-mode: overlay;
-       на: screen / soft-light / difference / lighten и т.п.
-    */
+    /* 📱 Мобильная версия — центрируем соцсети */
+    @media (max-width: 768px) {
+      .socials {
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: center;
+        top: 40px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- фон: видео -->
+  <!-- Фон видео -->
   <div class="video-bg">
     <video autoplay muted loop playsinline>
       <source src="bg-video.mp4" type="video/mp4" />
@@ -122,7 +127,7 @@
 
   <div class="overlay-dark"></div>
 
-  <!-- СОЦСЕТИ -->
+  <!-- Соцсети -->
   <div class="socials">
     <a href="https://open.spotify.com/artist/0I22ZgD2w7WwWUmAvrTj4Y?si=evLbhPniRqua8re-rOvzOQ" target="_blank"><i class="fa-brands fa-spotify"></i></a>
     <a href="https://www.instagram.com/_andyroze_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -132,8 +137,7 @@
 
   <!-- ЛОГО -->
   <div class="logo-wrapper">
-    <div class="logo-text">ANDY ROZE</div>
-    <img class="logo-image" src="logo.png" alt="Andy Roze" />
+    <img class="logo-image" src="logo.png" alt="Andy Roze">
   </div>
 
 </body>

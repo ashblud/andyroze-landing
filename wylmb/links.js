@@ -44,7 +44,7 @@ window.SMART_LINKS = [
     service: "amazon",
     name: "Amazon Music",
     action: "Play",
-    url: "",
+    url: "https://music.amazon.com/albums/B0H7378P2K",
     appUrl: ""
   },
   {
